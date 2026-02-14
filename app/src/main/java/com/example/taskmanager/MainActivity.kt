@@ -15,6 +15,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
@@ -44,21 +45,21 @@ fun DisplayImage(){
 }
 
 @Composable
-fun DisplayText(firstText: String, secondText: String, modifier: Modifier = Modifier) {
+fun DisplayText(modifier: Modifier = Modifier) {
     Column(
         modifier = modifier,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
 
         Text(
-            text = firstText,
+            text = stringResource(R.string.first_text),
             fontWeight = FontWeight.Bold,
             modifier = Modifier
                 .padding(top = 24.dp, bottom = 8.dp)
         )
 
         Text (
-            text = secondText,
+            text = stringResource(R.string.second_text),
             fontSize = 16.sp
         )
     }
@@ -72,7 +73,7 @@ fun Display(modifier: Modifier = Modifier){
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         DisplayImage()
-        DisplayText(firstText = "All tasks completed", secondText = "Nice work!")
+        DisplayText()
     }
 }
 @Preview(showBackground = true)
